@@ -96,6 +96,11 @@ variable "vpc_id" {
   type        = string
 }
 
+variable "workers_assume_role_services" {
+  type = list(string)
+  description = "Addition AWS Services the Workers should have in their IAM Profile Role in addition to ec2.amazonaws.com"
+}
+
 variable "worker_groups" {
   description = "A list of maps defining worker group configurations to be defined using AWS Launch Configurations. See workers_group_defaults for valid keys."
   type        = any
