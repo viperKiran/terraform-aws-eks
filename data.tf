@@ -11,7 +11,7 @@ data "aws_iam_policy_document" "workers_assume_role_policy" {
 
     principals {
       type        = "Service"
-      identifiers =  [compact(concat(list("ec2.amazonaws.com"), var.workers_assume_role_services))]
+      identifiers =  compact(concat(list("ec2.amazonaws.com"), var.workers_assume_role_services))
     }
   }
 }
